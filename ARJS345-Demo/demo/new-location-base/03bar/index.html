@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AR.js A-Frame</title>
+	<script src="../../../trd-js/aframe.min1.3.js"></script>
+	<!-- Assumes AR.js build is in the 'AR.js' directory -->
+	<script type='text/javascript' src="../../../js-assets/ar-threex-location-only.js"></script>
+	<script type='text/javascript' src='../../../js-assets/aframe-ar.js'></script>
+	<script src='index.js'></script>
+</head>
+
+<body>
+	<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'
+		renderer='antialias: true; alpha: true'>
+	
+		<a-cylinder id="bar1" radius="10" height="100" material="color: red;" >111</a-cylinder>
+		<a-cylinder id="bar2" radius="10" height="100" material="color: yellow;">222</a-cylinder>
+		<a-cylinder id="bar3" radius="10" height="100" material="color: blue;" >333</a-cylinder>
+		<a-cylinder id="bar4" radius="10" height="100" material="color: yellow;">444</a-cylinder>
+		<a-cylinder id="bar5" radius="10" height="100" material="color: blue;">555</a-cylinder>
+		<a-camera look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor:0.1'
+			gps-new-camera='gpsMinDistance: 1'></a-camera>
+	</a-scene>
+	<div id='setloc'
+		style='position:absolute; left: 10px; bottom: 2%; z-index:999; background-color: blue; color: white; padding: 10px'>
+		gps:<label id="gpsLab"></label>
+	</div>
+</body>
+
+</html>
