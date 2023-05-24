@@ -1,26 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  </head>
 
-  <body>
-    <a-scene
-      vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-    >
-      <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: <add-your-latitude>; longitude: <add-your-longitude>;"
-      ></a-text>
-      <a-camera gps-camera rotation-reader> </a-camera>
-    </a-scene>
-  </body>
-</html>
+<head>
+
+	<title>AR.js A-Frame</title>
+	<script src="../../../trd-js/aframe.min1.3.js"></script>
+	<!-- Assumes AR.js build is in the 'AR.js' directory -->
+	<script type='text/javascript' src="../../../js-assets/ar-threex-location-only.js"></script>
+	<script type='text/javascript' src='../../../js-assets/aframe-ar.js'></script>
+	<script src='index.js'></script>
+</head>
+
+<body>
+	<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'
+		renderer='antialias: true; alpha: true'>
+
+		<a-camera look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor:0.1'
+			gps-new-camera='gpsMinDistance: 1'></a-camera>
+		<!--	昌平坐标  -->
+
+		<!-- <a-entity  material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 40.1646118164063; longitude: 116.23323059082" scale="20 20 20"></a-entity>
+			<a-entity  material='color: blue' geometry='primitive: box' gps-new-entity-place="latitude: 40.1644592285156; longitude: 116.23331451416" scale="20 20 20"></a-entity>
+			<a-entity  material='color: red' geometry='primitive: cylinder  radius: 2 height:100' gps-new-entity-place="latitude: 40.1646118164063; longitude: 116.23323059082" scale="20 20 20"></a-entity>
+			<a-entity  material='color: blue' geometry='primitive: cylinder  radius: 2 height:100' gps-new-entity-place="latitude: 40.1646118164063; longitude: 116.23323059082" scale="20 20 20"></a-entity> -->
+
+	    <a-box id="box1"  material="color: yellow;" scale="20 20 20"></a-box>
+		
+		<!--八角坐标-->
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8972; longitude: 116.2040"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8972; longitude: 116.2041"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8972; longitude: 116.2042"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8972; longitude: 116.2043"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8972; longitude: 116.2044"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8973; longitude: 116.2040"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8973; longitude: 116.2041"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8973; longitude: 116.2042"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8973; longitude: 116.2043"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8973; longitude: 116.2044"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8974; longitude: 116.2040"></a-box>
+		<a-box material="color: red;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8974; longitude: 116.2041"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8974; longitude: 116.2042"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8974; longitude: 116.2043"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8974; longitude: 116.2044"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8975; longitude: 116.2040"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8975; longitude: 116.2041"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8975; longitude: 116.2042"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8975; longitude: 116.2043"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8975; longitude: 116.2044"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8976; longitude: 116.2040"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8976; longitude: 116.2041"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8976; longitude: 116.2042"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8976; longitude: 116.2043"></a-box>
+		<a-box material="color: blue;" scale="20 20 20"
+			gps-new-entity-place="latitude: 39.8976; longitude: 116.2044"></a-box>
+
+	</a-scene>
+
+	<div id='setloc'
+		style='position:absolute; left: 10px; bottom: 2%; z-index:999; background-color: rgb(0, 72, 255); color: white; padding: 10px'>
+		<label id="gpsLab"></label>
+	</div>
+</body>
+
