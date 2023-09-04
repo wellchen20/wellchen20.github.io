@@ -7,13 +7,11 @@
 	<!-- Assumes AR.js build is in the 'AR.js' directory -->
 	
 	<script src="../../../trd-js/aframe.min1.3.js"></script>
-	<script type='text/javascript' src="../../../trd-js/ar-threex-location-only.js"></script>
-	<script type='text/javascript' src='../../../trd-js/aframe-ar.js'></script>
+	<script type='text/javascript' src='../../../trd-js/aframe-ar-nft.js'></script>
 	<script src='index.js'></script>
 	<!--
-	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-	<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
-	<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+	<script type='text/javascript' src="../../../trd-js/ar-threex-location-only.js"></script>
+	<script type='text/javascript' src='../../../trd-js/aframe-ar.js'></script>
 	-->
 </head>
 
@@ -25,11 +23,18 @@
 		<a-camera look-controls-enabled='true' arjs-device-orientation-controls='smoothingFactor:0.1'
 			gps-new-camera='gpsMinDistance: 5'></a-camera>
 	-->
-		
+
+	<a-scene vr-mode-ui="enabled: false" arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;' renderer='antialias: true; alpha: true'>
+            <a-camera gps-camera rotation-reader></a-camera>
+            <a-box gps-entity-place='latitude: 40.1646118164063; longitude: 116.23323059082' color='red' scale='20 20 20'></a-box>
+	    <a-box gps-entity-place='latitude: 40.1644592285156; longitude: 116.23331451416' color='yellow' scale='20 20 20'></a-box>
+	    <a-box gps-entity-place='latitude: 40.1638298034668; longitude: 116.233497619629' color='red' scale='20 20 20'></a-box>
+    </a-scene>
+		<!--
 		<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
     		<a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
 		
-		<!--	昌平坐标  -->
+
 		<a-box material="color: yellow;" scale="20 20 20" gps-new-entity-place="latitude: 40.1646118164063; longitude: 116.23323059082"></a-box>
 		
 		<a-box material="color: yellow;" scale="20 20 20" gps-new-entity-place="latitude: 40.1644592285156; longitude: 116.23331451416"></a-box>
@@ -37,11 +42,9 @@
 		<a-box material="color: yellow;" scale="20 20 20" gps-new-entity-place="latitude: 40.1638298034668; longitude: 116.233497619629"></a-box>			
 			
 		<a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 40.163402557373; longitude: 116.233840942383" scale="10 10 10"></a-entity>
-		<!--昌平坐标-->
-		
 
 	</a-scene>
-
+-->
 	<div id='setloc'
 		style='position:absolute; left: 10px; bottom: 2%; z-index:999; background-color: rgb(0, 72, 255); color: white; padding: 10px'>
 		<label id="gpsLab"></label>
